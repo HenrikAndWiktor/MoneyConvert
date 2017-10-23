@@ -1,7 +1,6 @@
 package se.wiktoreriksson.moneycon;
 
-public abstract class ConvertImpl implements IConvert {
-    @Override
+public class ConvertImpl implements IConvert {
     public void convert(Input i, Currency toCur) {
         Currency fromCur=i.getCur();
         System.out.print(fromCur+"\n");
@@ -11,10 +10,11 @@ public abstract class ConvertImpl implements IConvert {
         System.out.print(btcval+"\n");
         double btctoval=toCur.getBTC();
         System.out.print(btctoval+"\n");
-        double x = btctoval*btcval;
-        System.out.print(x+"\n");
     }
-    public abstract double curOf(Input i);
-    public abstract double valOf(Input i);
-
+    public double curOf(Input i){
+        throw new RuntimeException("You can't do this!");
+    }
+    public double valOf(Input i) {
+        throw new RuntimeException("You can't do this!");
+    }
 }
